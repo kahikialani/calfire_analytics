@@ -43,7 +43,7 @@ This project analyzes California wildfire incident data from CalFire's public da
 ## Installation
 
 ### Prerequisites
-- Python 3.8+
+- Python
 - Jupyter Notebook or JupyterLab
 - (Optional) Google Cloud account with PostgreSQL instance
 
@@ -176,32 +176,16 @@ Contributions are welcome! Please feel free to submit a Pull Request. For major 
 
 ### Development Setup
 
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
 ### Code Style
 
-- Follow PEP 8 guidelines
-- Add docstrings to all functions
-- Include type hints where appropriate
-- Write unit tests for new features
 
 ## 📄 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## Acknowledgments
 
-- CalFire for providing public incident data
-- Google Cloud Platform for database infrastructure
-- The Python data science community for excellent tools
 
 ## Contact
-
-For questions or support, please open an issue on GitHub or contact [your-email@example.com]
 
 ---
 
