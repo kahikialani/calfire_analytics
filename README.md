@@ -65,29 +65,11 @@ cd calfire-analysis
 ### Option 1: Without Database (Simplest)
 
 ```python
-from calfire_data_handler import get_calfire_data
-
-# Load data directly from CalFire website
-df = get_calfire_data(use_database=False)
-print(f"Loaded {len(df):,} incidents")
 ```
 
 ### Option 2: With Database
 
 ```python
-from calfire_data_handler import get_calfire_data
-
-# Configure your database
-instance_connection_name = 'your-project:region:instance'
-db_user = 'your_username'
-db_pass = 'your_password'
-
-# Load with automatic fallback
-df = get_calfire_data(
-    instance_connection_name=instance_connection_name,
-    db_user=db_user,
-    db_pass=db_pass
-)
 ```
 
 ## Usage
@@ -95,73 +77,19 @@ df = get_calfire_data(
 ### Basic Data Loading
 
 ```python
-from calfire_data_handler import CalFireDataHandler
 
-# Initialize handler
-handler = CalFireDataHandler(
-    instance_connection_name='your-instance',
-    db_user='username',
-    db_pass='password'
-)
-
-# Get data (automatically handles all scenarios)
-df = handler.get_data()
-
-# Force update from source
-df = handler.get_data(force_update=True)
-
-# Skip database entirely
-df = handler.get_data(use_database=False)
 ```
 
 ### Data Cleaning Example
 
 ```python
-# Clean geographic coordinates (California boundaries)
-def clean_california_coords(df):
-    """Remove coordinates outside California."""
-    
-    def is_outside_california(lat, lon):
-        if pd.isna(lat) or pd.isna(lon):
-            return True
-        return not (32.5 <= lat <= 42 and -124.5 <= lon <= -114)
-    
-    # Mark outliers as NaN
-    mask = df.apply(lambda row: is_outside_california(
-        row['incident_latitude'], 
-        row['incident_longitude']
-    ), axis=1)
-    
-    df.loc[mask, 'incident_latitude_clean'] = np.nan
-    df.loc[mask, 'incident_longitude_clean'] = np.nan
-    
-    return df
+
 ```
 
 ### Outlier Handling Visualization
 
 ```python
-import matplotlib.pyplot as plt
 
-# Calculate IQR limits
-q1 = df['duration_days'].quantile(0.25)
-q3 = df['duration_days'].quantile(0.75)
-iqr = q3 - q1
-upper_limit = q3 + 1.5 * iqr
-
-# Create before/after boxplots
-fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(12, 5))
-
-# Before
-ax1.boxplot(df['duration_days'].dropna())
-ax1.set_title('Before Outlier Handling')
-
-# After (using clip without modifying original)
-duration_capped = df['duration_days'].clip(upper=upper_limit)
-ax2.boxplot(duration_capped.dropna())
-ax2.set_title('After Outlier Handling')
-
-plt.show()
 ```
 
 ## Data Pipeline
