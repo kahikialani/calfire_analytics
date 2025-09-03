@@ -64,60 +64,6 @@ pip install pandas numpy matplotlib sqlalchemy pg8000 google-cloud-sql-connector
 git clone https://github.com/yourusername/calfire-analysis.git
 cd calfire-analysis
 ```
-
-## Quick Start
-
-### Option 1: Without Database (Simplest)
-
-```python
-```
-
-### Option 2: With Database
-
-```python
-```
-
-## Usage
-
-### Basic Data Loading
-
-```python
-
-```
-
-### Data Cleaning Example
-
-```python
-
-```
-
-### Outlier Handling Visualization
-
-```python
-
-```
-
-## Data Pipeline
-
-```mermaid
-graph TD
-    A[Start] --> B{Database Configured?}
-    B -->|Yes| C{Database Online?}
-    B -->|No| D[Download from CalFire]
-    C -->|Yes| E{Force Update?}
-    C -->|No| D
-    E -->|Yes| F[Download Fresh Data]
-    E -->|No| G[Load from Database]
-    F --> H[Clean Data]
-    H --> I[Update Database]
-    I --> J[Return DataFrame]
-    G --> K{Data Exists?}
-    K -->|Yes| J
-    K -->|No| F
-    D --> H2[Clean Data]
-    H2 --> J
-```
-
 ## 🗄️ Database Configuration
 
 ### Google Cloud PostgreSQL Setup
