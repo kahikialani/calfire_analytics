@@ -1,4 +1,4 @@
-# 🔥 CalFire Incident Data Analysis
+# CalFire Incident Data Analysis
 
 A comprehensive data analysis pipeline for California wildfire incidents using CalFire's public dataset. This project provides automated data collection, cleaning, storage, and exploratory data analysis (EDA) with intelligent database fallback mechanisms.
 
@@ -121,38 +121,4 @@ county | The county from which the record is referring to.
 4. **Outlier Detection**: Statistical anomaly identification
 5. **Data Quality**: Missing value and coordinate validation
 
-## Project Structure
 
-```
-calfire-analysis/
-├── calfire_data_handler.py      # Main data management module
-├── CALFIRE_Analytics_Notebook.ipynb  # Analysis notebook
-├── README.md                     # This file
-├── requirements.txt              # Python dependencies
-├── data/                        # Local data storage (gitignored)
-│   └── cached_data.csv
-└── outputs/                     # Analysis outputs
-    ├── figures/
-    └── reports/
-```
-
-## Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request. For major changes, please open an issue first to discuss what you would like to change.
-
-### Development Setup
-
-### Code Style
-
-
-## 📄 License
-
-
-## Acknowledgments
-
-
-## Contact
-
----
-
-**Note**: This project is for educational and research purposes. Always refer to official CalFire sources for critical decision-making.
