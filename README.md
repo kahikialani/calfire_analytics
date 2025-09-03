@@ -6,14 +6,6 @@ A comprehensive data analysis pipeline for California wildfire incidents using C
 - [Overview](#overview)
 - [Features](#features)
 - [Installation](#installation)
-- [Quick Start](#quick-start)
-- [Usage](#usage)
-- [Data Pipeline](#data-pipeline)
-- [Database Configuration](#database-configuration)
-- [Analysis Features](#analysis-features)
-- [Project Structure](#project-structure)
-- [Contributing](#contributing)
-- [License](#license)
 
 ## Overview
 
@@ -88,7 +80,9 @@ config = {
 ## Analysis Features
 
 ### Available Data Fields
+In the dataset provided by [CAL FIRE](https://www.fire.ca.gov/), detailed records of wildfire incidents across California are made publicly available. The data can be accessed directly through CAL FIRE's open data portal [here](https://incidents.fire.ca.gov/imapdata/mapdataall.csv), which is updated regularly to reflect both active and historical incidents.
 
+This dataset includes a number of attributes, but the ones we will be focusing on are:
 Variable|Description |
 -----|-----|
 incident_name | The official name or title of the wildfire incident.|
@@ -106,6 +100,18 @@ incident_url | A direct link to the CAL FIRE incident webpage for more details.|
 incident_date_extinguished | The date and time when the incident was declared fully extinguished.|
 is_active | Status flag indicating whether the incident is still active or has been contained/closed. |
 calfire_incident | Boolean value indicating whether the incident was directly managed by CAL FIRE. |
+
+In the dataset provided by the California Department of Water Resources using Government of California's API, detailed records of monthly precipitation levels for each County across California are made publicly available. The link to the API can be found [here](https://lab.data.ca.gov/dataset/annual-precipitation-data-for-northern-california-1944-current/c66bcc83-d895-48cf-a639-a53974899b88).
+
+This dataset includes a number of attributes, but the ones we will be focusing on are:
+Variable|Description |
+-----|-----|
+incident_name | The official name or title of the wildfire incident.|
+precip_date | The datetime in which the record comes from. |
+precip_inches | The total inches of precipitation in each county, in each month. |
+precip_month | Number equating to the month of the year. |
+county | The county from which the record is referring to.
+
 
 ### Key Analyses Included
 
