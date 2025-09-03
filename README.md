@@ -17,14 +17,19 @@ A comprehensive data analysis pipeline for California wildfire incidents using C
 
 ## Overview
 
-This project analyzes California wildfire incident data from CalFire's public database, providing insights into fire patterns, duration, geographic distribution, and containment metrics. It features an intelligent data management system that seamlessly works with or without a Google Cloud PostgreSQL database.
+California experiences some of the most severe and frequent wildfires in the United States. With the current tides of climate change, population growth, and developing land uses, understanding patterns of wildfire activity is becoming an increasingly important consideration for the residents and government of California. To better understand these patterns and support proactive decision-making, this project focuses on trend forecasting and analysis using historical incident data provided by CAL Fire as well as precipitation data provided by California Department of Water Resources.
+
+The project integrates data analytics to explore wildfire behavior, identify risk factors, and generate insights. The workflow begins with acquiring raw incident data directly from CAL FIRE's public databases, followed by data cleaning, transformation, and storage in a relation database for efficient querying. Exploratory data analysis (EDA) highlights temporal, geographic, and environmental patterns to allow for further insights.
+
+The end product is a data pipeline and interactive dashboard that automatically updates with new incident data, delivering actionable insights to fire management agencies, policymakers, and researchers. This allows stakeholders to track wildfire activity in realtime, monitor trends, and simulate future scenarios to improve preparedness, resource allocation, and public safety.
+
+This notebook serves as the back-bone of this project's workflow. While all dashboards, visualizations, and metrics can be viewed by running the core Python file, this notebook keeps track of the ins-and-outs of the decision-making behind the analysis.
 
 ### Key Capabilities
 - **Automated Data Collection**: Downloads latest incident data from CalFire's public CSV endpoint
 - **Smart Data Storage**: Optional Google Cloud PostgreSQL integration with automatic fallback
 - **Data Cleaning**: Handles outliers, missing values, and geographic coordinate validation
 - **Exploratory Data Analysis**: Comprehensive statistical analysis and visualizations
-- **Resilient Architecture**: Works seamlessly whether database is online, offline, or unavailable
 
 ## Features
 
