@@ -89,14 +89,23 @@ config = {
 
 ### Available Data Fields
 
-- `incident_name`: Fire incident name
-- `incident_date_created`: Start date of incident
-- `incident_date_extinguished`: Containment date
-- `incident_county`: County location
-- `incident_acres_burned`: Total acres affected
-- `incident_containment`: Containment percentage
-- `incident_latitude/longitude`: Geographic coordinates
-- `duration_days`: Calculated fire duration
+Variable|Description |
+-----|-----|
+incident_name | The official name or title of the wildfire incident.|
+incident_date_created | The date and time when the incident was first reported or created in the system.|
+incident_administrative_unit | The CAL FIRE administrative unit or agency responsible for managing the incident.|
+incident_county | The county in California where the incident occurred.|
+incident_location | A descriptive location of the incident, such as city, town, or nearby landmark.|
+incident_acres_burned | The total number of acres burned during the incident.|
+incident_containment | The percentage of the fire that has been contained at the time of reporting.|
+incident_cooperating_agencies | Other local, state, or federal agencies assisting with the incident response.|
+incident_longitude | The longitude coordinate of the incident’s location.|
+incident_latitude | The latitude coordinate of the incident’s location.|
+incident_id | A unique identifier assigned to each incident (string or numeric).|
+incident_url | A direct link to the CAL FIRE incident webpage for more details.|
+incident_date_extinguished | The date and time when the incident was declared fully extinguished.|
+is_active | Status flag indicating whether the incident is still active or has been contained/closed. |
+calfire_incident | Boolean value indicating whether the incident was directly managed by CAL FIRE. |
 
 ### Key Analyses Included
 
